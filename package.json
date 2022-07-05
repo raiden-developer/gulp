@@ -1,12 +1,12 @@
 {
   "name": "gulp-webpack",
   "version": "1.0.0",
-  "description": "",
-  "main": "gulpfile.js",
+  "description": "gulpfile.js",
   "scripts": {
     "start": "gulp",
     "build": "gulp --production"
   },
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jovan-developer/gulp-webpack.git"
@@ -22,16 +22,11 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/jovan-developer/gulp-webpack/issues"
-  },
-  "homepage": "https://github.com/jovan-developer/gulp-webpack#readme",
   "devDependencies": {
     "@babel/core": "^7.17.8",
     "@babel/preset-env": "^7.16.11",
     "browser-sync": "^2.27.9",
     "del": "^6.0.0",
-    "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
     "gulp-babel": "^8.0.0",
     "gulp-concat": "^2.6.1",

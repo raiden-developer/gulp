@@ -1,7 +1,9 @@
+// import news from '../data/news.json'
+
 const isProd = process.argv.includes('--production')
 const isDev = !isProd
 
-module.exports = {
+export default {
   isProd: isProd,
   isDev: isDev,
 
@@ -10,10 +12,10 @@ module.exports = {
   },
 
   pug: {
-    pretty: isDev,
-    data: {
-      news: require('../data/news.json')
-    }
+    pretty: isDev
+    // data: {
+    //   news: news
+    // }
   },
 
   webpack: {

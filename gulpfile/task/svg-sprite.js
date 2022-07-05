@@ -1,13 +1,13 @@
-const {src, dest} = require('gulp')
+import gulp from 'gulp'
 
 // Config
-const path = require('../config/path.js')
-const app = require('../config/app.js')
+import path from '../config/path.js'
+import app from '../config/app.js'
 
 // Plugins
-const fs = require('fs')
-const merge = require('merge-stream')
-const svgSprite = require('gulp-svg-sprite')
+import fs from 'fs'
+import merge from 'merge-stream'
+import svgSprite from 'gulp-svg-sprite'
 
 // Обработка SVG Спрайтов
 const sprite = () => {
@@ -17,7 +17,8 @@ const sprite = () => {
   imgDirs.map(function (dir) {
     // console.log(`${srcFolder}/img/svg/${dir}`)
     arr.push(
-      src(`${path.sprite.src}/${dir}/*.svg`)
+      gulp
+        .src(`${path.sprite.src}/${dir}/*.svg`)
         .pipe(
           svgSprite({
             mode: {
@@ -27,11 +28,11 @@ const sprite = () => {
             }
           })
         )
-        .pipe(dest(path.sprite.dest))
+        .pipe(gulp.dest(path.sprite.dest))
     )
   })
 
   return merge(arr)
 }
 
-module.exports = sprite
+export default sprite

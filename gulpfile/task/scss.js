@@ -18,6 +18,7 @@ import gulpSass from 'gulp-sass'
 const sass = gulpSass(dartSass)
 import sassGlob from 'gulp-sass-glob'
 import webpCss from 'gulp-webp-css'
+import browserSync from 'browser-sync'
 
 // Обработка SCSS
 const scss = () => {
@@ -44,6 +45,7 @@ const scss = () => {
       .pipe(csso())
       .pipe(size({title: 'main.min.css'}))
       .pipe(gulp.dest(path.scss.dest, {sourcemaps: app.isDev}))
+      .pipe(browserSync.stream())
   )
 }
 

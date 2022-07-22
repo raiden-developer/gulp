@@ -19,12 +19,12 @@ import sprite from './task/svg-sprite.js'
 
 // Watching
 const watcher = () => {
-  gulp.watch(path.html.watch, html).on('all', browserSync.reload)
-  gulp.watch(path.scss.watch, scss).on('change', browserSync.reload)
-  gulp.watch(path.js.watch, js).on('all', browserSync.reload)
-  gulp.watch(path.img.watch, img).on('all', browserSync.reload)
-  gulp.watch(path.font.watch, font).on('all', browserSync.reload)
-  gulp.watch(path.sprite.watch, sprite).on('all', browserSync.reload)
+  gulp.watch(path.html.watch, html)
+  gulp.watch(path.scss.watch, scss)
+  gulp.watch(path.js.watch, js)
+  gulp.watch(path.img.watch, img)
+  gulp.watch(path.font.watch, font)
+  gulp.watch(path.sprite.watch, sprite)
 }
 
 // Server

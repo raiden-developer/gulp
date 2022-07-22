@@ -10,6 +10,7 @@ import notify from 'gulp-notify'
 import newer from 'gulp-newer'
 import fonter from 'gulp-fonter'
 import ttf2woff2 from 'gulp-ttf2woff2'
+import browserSync from 'browser-sync'
 
 // Обработка шрифтов
 const font = () => {
@@ -27,6 +28,7 @@ const font = () => {
     .pipe(fonter(app.fonter))
     .pipe(ttf2woff2())
     .pipe(gulp.dest(path.font.dest))
+    .pipe(browserSync.stream())
 }
 
 export default font

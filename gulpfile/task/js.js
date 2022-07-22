@@ -9,6 +9,7 @@ import plumber from 'gulp-plumber'
 import notify from 'gulp-notify'
 import babel from 'gulp-babel'
 import webpack from 'webpack-stream'
+import browserSync from 'browser-sync'
 
 // Обработка JS
 const js = () => {
@@ -26,6 +27,7 @@ const js = () => {
       .pipe(babel())
       .pipe(webpack(app.webpack))
       .pipe(gulp.dest(path.js.dest, {sourcemaps: app.isDev}))
+      .pipe(browserSync.stream())
   )
 }
 

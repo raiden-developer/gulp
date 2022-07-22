@@ -8,6 +8,7 @@ import app from '../config/app.js'
 import fs from 'fs'
 import merge from 'merge-stream'
 import svgSprite from 'gulp-svg-sprite'
+import browserSync from 'browser-sync'
 
 // Обработка SVG Спрайтов
 const sprite = () => {
@@ -29,6 +30,7 @@ const sprite = () => {
           })
         )
         .pipe(gulp.dest(path.sprite.dest))
+        .pipe(browserSync.stream())
     )
   })
 

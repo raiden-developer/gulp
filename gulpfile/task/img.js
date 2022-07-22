@@ -11,6 +11,7 @@ import imagemin from 'gulp-imagemin'
 import newer from 'gulp-newer'
 import webp from 'gulp-webp'
 import gulpIf from 'gulp-if'
+import browserSync from 'browser-sync'
 
 // Обработка картинок
 const img = () => {
@@ -31,6 +32,7 @@ const img = () => {
     .pipe(newer(path.img.dest))
     .pipe(gulpIf(app.isProd, imagemin(app.imagemin)))
     .pipe(gulp.dest(path.img.dest))
+    .pipe(browserSync.stream())
 }
 
 export default img

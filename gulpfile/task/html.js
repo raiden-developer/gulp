@@ -11,6 +11,7 @@ import fileInclude from 'gulp-file-include'
 import htmlmin from 'gulp-htmlmin'
 import size from 'gulp-size'
 import webpHtml from 'gulp-webp-html'
+import browserSync from 'browser-sync'
 
 // Обработка HTML
 const html = () => {
@@ -30,6 +31,7 @@ const html = () => {
     .pipe(htmlmin(app.htmlmin))
     .pipe(size({title: 'После сжатия'}))
     .pipe(gulp.dest(path.html.dest))
+    .pipe(browserSync.stream())
 }
 
 export default html
